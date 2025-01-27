@@ -204,7 +204,9 @@ class PalettePlugin(AbstractPlugin):
 
         # CREATE TOGGLE ACTIONS
         self.debug('Creating palette toggle actions')
-        group = QtGui.QActionGroup(self, objectName='palette_toggle')
+        #group = QtGui.QActionGroup(self, objectName='palette_toggle')
+        group = QtGui.QActionGroup(self)
+        group.setObjectName('palette_toggle')
         group.setExclusive(False)
         for item in widget.items:
             action = QtGui.QAction(item.realName.title(), group, objectName=item.name, checkable=True)

@@ -542,7 +542,7 @@ class PluginManager(QtCore.QObject):
         :type plugin: AbstractPlugin
         :rtype: bool
         """
-        #LOGGER.info('Starting plugin: %s v%s', plugin.name(), plugin.version())
+        LOGGER.info('Starting plugin: %s v%s', plugin.name(), plugin.version())
         try:
             plugin.start()
         except Exception:
