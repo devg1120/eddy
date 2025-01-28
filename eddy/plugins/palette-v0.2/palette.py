@@ -114,7 +114,8 @@ class PalettePlugin(AbstractPlugin):
         """
         diagram = self.session.mdi.activeDiagram()
         if diagram:
-            if not modifiers & QtCore.Qt.ControlModifier:
+            #GUSA if not modifiers & QtCore.Qt.ControlModifier:
+            if not (modifiers == QtCore.Qt.ControlModifier):
                 self.widget('palette').reset()
                 diagram.setMode(DiagramMode.Idle)
 
