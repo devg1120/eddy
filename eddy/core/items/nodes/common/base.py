@@ -219,9 +219,12 @@ class AbstractNode(AbstractItem):
         polygon = self.mapToScene(path.toFillPolygon(self.transform()))
         for i in range(0, polygon.size() - 1):
             polyline = QtCore.QLineF(polygon[i], polygon[i + 1])
+            #GUSA
             #if polyline.intersect(line, intersection) == QtCore.QLineF.BoundedIntersection:
-            if polyline.intersects(line)[0] == QtCore.QLineF.BoundedIntersection:
-                return intersection
+            #    return intersection
+            _type , _point =  polyline.intersects(line)
+            if _type  == QtCore.QLineF.BoundedIntersection:
+                return _point
         return None
 
     def isConstructor(self):

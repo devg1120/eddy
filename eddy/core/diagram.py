@@ -220,7 +220,7 @@ class Diagram(QtWidgets.QGraphicsScene):
                 #############################################
                 # EDGE INSERTION
                 #################################
-
+                print("EDGE INSERTION************************")
                 node = first(self.items(mousePos, edges=False))
                 if node:
                     edge = self.factory.create(Item.valueOf(self.modeParam), source=node)

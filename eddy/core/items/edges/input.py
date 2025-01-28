@@ -56,6 +56,7 @@ class InputEdge(AbstractEdge):
         """
         super().__init__(**kwargs)
         self.label = EdgeLabel('', centered=False, parent=self)
+        print("core/items/edges InputEdge")
 
     #############################################
     #   INTERFACE
@@ -96,6 +97,8 @@ class InputEdge(AbstractEdge):
         :type size: int
         :rtype: QPolygonF
         """
+        #print("p1",p1)
+        #p1 = QtCore.QPointF(100, 200)
         rad = radians(angle)
         p2 = p1 - QtCore.QPointF(sin(rad + M_PI / 4.0) * size, cos(rad + M_PI / 4.0) * size)
         p3 = p2 - QtCore.QPointF(sin(rad + 3.0 / 4.0 * M_PI) * size, cos(rad + 3.0 / 4.0 * M_PI) * size)
@@ -109,6 +112,7 @@ class InputEdge(AbstractEdge):
         :type option: QStyleOptionGraphicsItem
         :type widget: QWidget
         """
+        #print("core/items/edges/input.py InputEdge paint", self.id, self.source, self.target)
         # SET THE RECT THAT NEEDS TO BE REPAINTED
         painter.setClipRect(option.exposedRect)
         # SELECTION AREA
@@ -224,6 +228,8 @@ class InputEdge(AbstractEdge):
             subpath = collection[0]
             p1 = sourceNode.intersection(subpath)
             p2 = targetNode.intersection(subpath) if targetNode else subpath.p2()
+            print("p1",p1)
+            print("p2",p2)
             if p1 is not None and p2 is not None:
                 path.moveTo(p1)
                 path.lineTo(p2)
@@ -235,6 +241,8 @@ class InputEdge(AbstractEdge):
             subpathN = collection[-1]
             p11 = sourceNode.intersection(subpath1)
             p22 = targetNode.intersection(subpathN)
+            print("p11",p11)
+            print("p22",p22)
             if p11 and p22:
                 p12 = subpath1.p2()
                 p21 = subpathN.p1()

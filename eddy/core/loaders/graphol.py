@@ -382,7 +382,6 @@ class GrapholDiagramLoader_v1(AbstractDiagramLoader):
             'target': self.nodes[e.attribute('target')],
             'breakpoints': points[1:-1]
         })
-
         path = edge.source.painterPath()
         if path.contains(edge.source.mapFromScene(points[0])):
             edge.source.setAnchor(edge, points[0])
@@ -545,7 +544,6 @@ class GrapholDiagramLoader_v1(AbstractDiagramLoader):
         #############################################
         # LOAD EDGES
         #################################
-
         element = graph.firstChildElement('edge')
         while not element.isNull():
             try:
@@ -1253,6 +1251,7 @@ class GrapholLoaderMixin_v2(object):
             'target': self.buffer[d.name][e.attribute('target')],
             'breakpoints': points[1:-1]
         })
+        print("core/loaders/graphol.py importGenericEdge-------",edge.id, edge.source, edge.target)
 
         path = edge.source.painterPath()
         if path.contains(edge.source.mapFromScene(points[0])):
@@ -1436,6 +1435,7 @@ class GrapholLoaderMixin_v2(object):
             :type default: str
             :rtype: str
             """
+            print("tag:", tag)
             QtWidgets.QApplication.processEvents()
             subelement = section.firstChildElement(tag)
             if subelement.isNull():

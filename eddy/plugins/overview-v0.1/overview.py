@@ -99,7 +99,7 @@ class OverviewPlugin(AbstractPlugin):
                 disconnect(widget.diagram.selectionChanged, self.onDiagramSelectionChanged)
                 disconnect(widget.diagram.sgnUpdated, self.onDiagramUpdated)
             # Attach the new view/diagram to the overview widget.
-            self.debug('Connecting to diagram: %s', subwindow.diagram.name)
+            self.debug('** Connecting to diagram: %s', subwindow.diagram.name)
             connect(subwindow.diagram.selectionChanged, self.onDiagramSelectionChanged)
             connect(subwindow.diagram.sgnUpdated, self.onDiagramUpdated)
             widget.setScene(subwindow.diagram)
