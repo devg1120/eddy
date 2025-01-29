@@ -95,6 +95,8 @@ class DiagramView(QtWidgets.QGraphicsView):
         self.setOptimizationFlags(DiagramView.DontAdjustForAntialiasing)
         self.setOptimizationFlags(DiagramView.DontSavePainterState)
         self.setViewportUpdateMode(DiagramView.MinimalViewportUpdate)
+        #GUSA COLOR
+        self.setStyleSheet("QGraphicsView {background: orange ; }")  #GSCOLOR
         connect(diagram.sgnUpdated, self.doUpdateView)
 
     #############################################

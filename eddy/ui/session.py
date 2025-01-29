@@ -177,10 +177,18 @@ class Session(HasActionSystem, HasMenuSystem, HasPluginSystem, HasWidgetSystem,
         self.clipboard = Clipboard(self)
         self.undostack = QtGui.QUndoStack(self)
         self.mdi = MdiArea(self)
+
+        #self.mdi.setStyleSheet("QMdiArea {background: olive ; }")  #GSCOLOR
+        #self.mdi.setBackground(QtGui.QBrush(QtGui.QColor(255, 0, 0)))
+        self.mdi.setBackground(QtGui.QBrush(QtGui.QColor("olive")))  #GSCOLOR
+
         self.mf = MenuFactory(self)
         self.pf = PropertyFactory(self)
         self.pmanager = PluginManager(self)
         self.project = None
+        #GUSA COLOR
+        #self.setStyleSheet("QMainWindow {background: #3366cc ; }")   #GSCOLOR
+        self.setStyleSheet("Session {background: green ; }")   #GSCOLOR
 
         #############################################
         # CONFIGURE SESSION
@@ -864,10 +872,27 @@ class Session(HasActionSystem, HasMenuSystem, HasPluginSystem, HasWidgetSystem,
         """
         Initialize stuff that are shared by actions, menus, widgets etc.
         """
-        self.addWidget(QtWidgets.QToolBar('Document', objectName='document_toolbar'))
-        self.addWidget(QtWidgets.QToolBar('Editor', objectName='editor_toolbar'))
-        self.addWidget(QtWidgets.QToolBar('View', objectName='view_toolbar'))
-        self.addWidget(QtWidgets.QToolBar('Graphol', objectName='graphol_toolbar'))
+        #self.addWidget(QtWidgets.QToolBar('Document', objectName='document_toolbar'))
+        #self.addWidget(QtWidgets.QToolBar('Editor', objectName='editor_toolbar'))
+        #self.addWidget(QtWidgets.QToolBar('View', objectName='view_toolbar'))
+        #self.addWidget(QtWidgets.QToolBar('Graphol', objectName='graphol_toolbar'))
+
+        #GUSA COLOR   GSCOLOR
+        document = QtWidgets.QToolBar('Document', objectName='document_toolbar')
+        document.setStyleSheet("QToolBar {background: #1e90ff ; }")   #GSCOLOR
+        self.addWidget(document)
+
+        editor = QtWidgets.QToolBar('Editor', objectName='editor_toolbar')
+        editor.setStyleSheet("QToolBar {background: #1e90ff ; }")   #GSCOLOR
+        self.addWidget(editor)
+
+        view  = QtWidgets.QToolBar('View', objectName='view_toolbar')
+        view.setStyleSheet("QToolBar {background: #1e90ff ; }")     #GSCOLOR
+        self.addWidget(view)
+
+        grap  = QtWidgets.QToolBar('Graphol', objectName='graphol_toolbar')
+        grap.setStyleSheet("QToolBar {background: #1e90ff ; }")    #GSCOLOR
+        self.addWidget(grap)
 
     def initPlugins(self):
         """
@@ -914,6 +939,7 @@ class Session(HasActionSystem, HasMenuSystem, HasPluginSystem, HasWidgetSystem,
         statusbar.addPermanentWidget(self.widget('progress_bar'))
         statusbar.addPermanentWidget(QtWidgets.QWidget())
         statusbar.setSizeGripEnabled(False)
+        statusbar.setStyleSheet("QStatusBar {background: yellow ; }")   #GSCOLOR
         self.setStatusBar(statusbar)
 
     def initToolBars(self):

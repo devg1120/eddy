@@ -199,6 +199,7 @@ class OverviewWidget(QtWidgets.QGraphicsView):
         self.setViewportUpdateMode(QtWidgets.QGraphicsView.NoViewportUpdate)
         self._mousePressed = False
         self._view = None
+        self.setStyleSheet("OverviewWidget {background: #ffffff ; }")   #GSCOLOR
 
     #############################################
     #   PROPERTIES

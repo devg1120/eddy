@@ -57,6 +57,9 @@ class MdiArea(QtWidgets.QMdiArea):
         self.setTabPosition(QtWidgets.QTabWidget.North)
         self.setTabsClosable(True)
         self.setTabsMovable(True)
+        #GUSA COLOR
+        #self.setStyleSheet("QMdiArea {background: #1e90ff ; }")
+        self.setStyleSheet("QMdiArea {background: red ; }")   #GSCOLOR
 
         for child in self.children():
             if isinstance(child, QtWidgets.QTabBar):

@@ -167,6 +167,7 @@ class ProjectExplorerWidget(QtWidgets.QWidget):
 
         self.setContentsMargins(0, 0, 0, 0)
         self.setMinimumWidth(216)
+        self.setStyleSheet("QWidget {background: lime ; }")   #GSCOLOR
 
         header = self.projectview.header()
         header.setStretchLastSection(False)

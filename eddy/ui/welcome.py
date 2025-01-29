@@ -162,6 +162,7 @@ class Welcome(QtWidgets.QWidget):
         self.innerLayoutR.addWidget(self.appVersion, 0, QtCore.Qt.AlignHCenter)
         self.innerLayoutR.addLayout(self.buttonLayoutRT)
         self.innerLayoutR.addLayout(self.buttonLayoutRB)
+        self.setStyleSheet("QVBoxLayout {background:#ffffff ; }")
 
         #############################################
         # SETUP DIALOG LAYOUT
@@ -181,6 +182,8 @@ class Welcome(QtWidgets.QWidget):
         self.outerLayoutR = QtWidgets.QVBoxLayout(self.outerWidgetR)
         self.outerLayoutR.setContentsMargins(0, 0, 0, 0)
         self.outerLayoutR.addWidget(self.innerWidgetR, 0,  QtCore.Qt.AlignTop)
+        #GUSA COLOR
+        self.outerWidgetR.setStyleSheet("QWidget {background:#ffffff ; }")
 
         self.mainLayout = QtWidgets.QHBoxLayout(self)
         self.mainLayout.setContentsMargins(0, 0, 0, 0)
