@@ -77,6 +77,7 @@ class DockTitleWidget(QtWidgets.QWidget):
         :type parent: QDockWidget
         """
         super().__init__(parent)
+        self.setStyleSheet("DockTitleWidget {background: CornflowerBlue ; }")   #GSCOLOR
         # CREATE TITLEBAR ICON AND TITLE
         self.imageLabel = QtWidgets.QLabel(self)
         self.imageLabel.setPixmap(icon.pixmap(18))

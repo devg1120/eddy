@@ -999,6 +999,11 @@ class Session(HasActionSystem, HasMenuSystem, HasPluginSystem, HasWidgetSystem,
         self.addWidget(button)
 
         combobox = ComboBox(objectName='profile_switch')
+        css = """
+         QComboBox { background: pink; }
+         QListView { background: red;  }
+        """
+        combobox.setStyleSheet(css)   #GSCOLOR
         combobox.setEditable(False)
         combobox.setFont(Font('Roboto', 12))
         combobox.setFocusPolicy(QtCore.Qt.StrongFocus)
